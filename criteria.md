@@ -23,8 +23,8 @@ For at least 4 of my 5 test questions, the retrieved chunks include one that
 contains the answer.
 
 **Why this target:**
-<!-- e.g. "One of my questions is about a topic only two documents mention, so
-     I expect that one to be hard." -->
+<!-- "Most of my questions are about topics only one document mentioned, as far as
+I can see, so I expect that one to be hard." -->
 
 ---
 
@@ -33,8 +33,7 @@ contains the answer.
 Every answer the system produces names at least one source document.
 
 **Why this target:**
-<!-- Why all five and not four? What about your setup makes that achievable —
-     or what would have to go wrong for it not to be? -->
+<!-- Naming a source shows that the system retreived the answer from a reliable location -->
 
 ---
 
@@ -50,12 +49,12 @@ in at least 4 of 5 tries.
      just keep five of them, or the "4 of 5" above has nothing to be 4 of. -->
 
 **Why this target:**
-<!-- What did your distances look like when you set the cutoff in Milestone 4?
-     Was there a clean gap, or did the two groups overlap? -->
+<!-- There are at least 5 questions that are out of scope, so if the relevance gate
+stops the answer, then the system is working. -->
 
 ---
 
-## 4. Something about your chunks
+## 4. At least 4 out of 5 chunks should contain full sentences.
 
 <!-- YOU WRITE THIS ONE.
 
@@ -72,12 +71,14 @@ in at least 4 of 5 tries.
 
 
 **Why this target:**
-
+<!-- This target works because full sentences show that the corpus is chunking correctly.
+If the chunk outputs something that has been abruptly cut off mid-sentence, then it has failed. Also, 800
+characters would just be too long." -->
 
 
 ---
 
-## 5. Your choice
+## 5. For at least 3 out of 5 test questions, the results should be no more than 800 characters.
 
 <!-- YOU WRITE THIS ONE TOO.
 
@@ -90,7 +91,8 @@ in at least 4 of 5 tries.
 
 
 **Why this target:**
-
+<!-- I don't think the answers to most of my test questions should be very long.
+They're very straightforward questions I got from one txt document. -->
 
 
 ---
