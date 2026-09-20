@@ -23,8 +23,8 @@ For at least 4 of my 5 test questions, the retrieved chunks include one that
 contains the answer.
 
 **Why this target:**
-<!-- "Most of my questions are about topics only one document mentioned, as far as
-I can see, so I expect that one to be hard." -->
+Most of my questions are about topics only one document mentioned, as far as
+I can see, so I expect that one to be hard."
 
 ---
 
@@ -33,7 +33,7 @@ I can see, so I expect that one to be hard." -->
 Every answer the system produces names at least one source document.
 
 **Why this target:**
-<!-- Naming a source shows that the system retreived the answer from a reliable location -->
+Naming a source shows that the system retreived the answer from a reliable location.
 
 ---
 
@@ -49,12 +49,14 @@ in at least 4 of 5 tries.
      just keep five of them, or the "4 of 5" above has nothing to be 4 of. -->
 
 **Why this target:**
-<!-- There are at least 5 questions that are out of scope, so if the relevance gate
-stops the answer, then the system is working. -->
+There are at least 5 questions that are out of scope, so if the relevance gate
+stops the answer, then the system is working.
 
 ---
 
 ## 4. At least 4 out of 5 chunks should contain full sentences.
+
+No chunk should stop or start halfway/partway through a sentence.
 
 <!-- YOU WRITE THIS ONE.
 
@@ -71,14 +73,16 @@ stops the answer, then the system is working. -->
 
 
 **Why this target:**
-<!-- This target works because full sentences show that the corpus is chunking correctly.
+This target works because full sentences show that the corpus is chunking correctly.
 If the chunk outputs something that has been abruptly cut off mid-sentence, then it has failed. Also, 800
-characters would just be too long." -->
+characters would just be too long."
 
 
 ---
 
 ## 5. For at least 3 out of 5 test questions, the results should be no more than 800 characters.
+
+No results should exceed the 800 character limit as the corpus chosen does not have that many characters in each document.
 
 <!-- YOU WRITE THIS ONE TOO.
 
@@ -91,8 +95,8 @@ characters would just be too long." -->
 
 
 **Why this target:**
-<!-- I don't think the answers to most of my test questions should be very long.
-They're very straightforward questions I got from one txt document. -->
+I don't think the answers to most of my test questions should be very long.
+They're very straightforward questions I got from one txt document.
 
 
 ---
