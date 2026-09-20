@@ -29,7 +29,7 @@
      Milestone 5. -->
 
 ```
-...
+I picked the corpus on advice threads because I liked how the documents for each thread were focused on specific questions. The questions my system answers are related to singular threads and the questions that led to the creation of the thread. The threads were asking by, I assume, new/incoming students wanted to know about campus life, and most questions that were posted were answered by current/past students to help the student with the question understand more about campus life from a personal point of view.
 ```
 
 ## Chunking Strategy
@@ -117,11 +117,17 @@ Empty office hours is the biggest unused resource here and I say that having was
 **Answer:**
 
 ```
-  (best distance 0.491, cutoff 0.5)
+  (best distance 0.491, cutoff 0.7)
 
-Students suggest several study spots other than the library: Ridgeway Café before 10am (empty, quiet, good coffee) and the open lounges on floors 2 through 5 of the science building (unlocked and almost always empty) (thread_study_spots.txt).
+Based on the provided documents, students suggest the following study spots:
+- Ridgeway Café before 10am, because it is empty, quiet, has good coffee, and they do not push you out (thread_study_spots.txt).
+- The open lounges on floors 2 through 5 of the science building, which are unlocked and almost always empty (thread_study_spots.txt).
+- The library third floor, if you need silence (thread_study_spots.txt).
+- The group study rooms in the library, which can be booked by a single person to use alone since nobody checks (thread_study_spots.txt). 
 
-Sources retrieved: thread_commuting.txt, thread_first_gen.txt, thread_pass_fail.txt, thread_study_spots.txt
+Source: thread_study_spots.txt
+
+Sources retrieved: thread_commuting.txt, thread_first_gen.txt, thread_laptop_specs.txt, thread_pass_fail.txt, thread_study_spots.txt
 
 ```
 
@@ -138,7 +144,18 @@ Sources retrieved: thread_commuting.txt, thread_first_gen.txt, thread_pass_fail.
 
 | Question | In corpus? | Best distance |
 |---|---|---|
-| "what | advice_threads | 0.491 |
+| "What do students say about when to use the pass/fail option?" | Yes | 0.461 |
+| "What should students pack for winter clothing?" | Yes | 0.626 |
+| "What should a student do if they need to turn in an assignment late?" | Yes | 0.567 |
+| "What do students say about the printing quota being enough?" | Yes | 0.591 |
+| "What do students say about the best study spots on campus?" | Yes | 0.551 |
+| "What is the capital of Mongolia?" | No | 0.825 |
+| "How do I change the oil in a diesel engine?" | No | 0.934 |
+| "Who won the 1994 World Cup?" | No | 0.886 |
+| "What is the recommended dosage of ibuprofen for a headache?" | No | 0.844 |
+| "How do I write a for loop in Rust?" | No | 0.896 |
+
+Each in-corpus question was run 3 times and returned the same best distance every time. Out-of-scope questions topped out at 0.825; in-corpus questions topped out at 0.626 — gate refused 5 of 5 out-of-scope questions. The midppoint of these two groups is around 0.7, that's why I picked 0.7 as my threshold.
 
 ## How I Used AI
 
@@ -152,8 +169,9 @@ Sources retrieved: thread_commuting.txt, thread_first_gen.txt, thread_pass_fail.
      Milestone 5. -->
 
 **1.**
-
+I used AI to help write my chunker.py split_documents dunction. I gave it instructions on what to implement based on my thoughts about splitting on sentences so that nothing is an incomplete thought. And also instructed it to follow the instructions in the document to create a proper function following the model of the fallback.
 **2.**
+I used Claude to help me test my criteron in criteria.md because I wanted to make sure they were testable. I also used Claude to help me decide what was the best threshold for the chunking based on the two groups of 5 sentence/questions each.
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
