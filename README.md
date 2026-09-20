@@ -28,10 +28,14 @@
 
      Milestone 5. -->
 
+```
+...
+```
+
 ## Chunking Strategy
 
-**Chunk size:**
-**Overlap:**
+**Chunk size: 600 characters **
+**Overlap: 100 characters **
 
 <!-- What about YOUR documents made you pick these numbers? Short posts and
      long sectioned guides don't want the same chunking, and "800 seemed
@@ -42,6 +46,10 @@
      more than pretending you got it right first time.
 
      Milestone 3. -->
+
+```
+I picked 600 characters because for the corpus I picked, a lot of the threads provided fully good answers for the questions that were asked in the thread. I also chose an overlap of 100 because it doesn't do much, as a lot of the documents questions don't overlap with one another.
+```
 
 ## Sample Chunks
 
@@ -60,8 +68,7 @@
 THREAD: Is a bike worth it for a 20 minute walk commute? --- reply 1 (14 votes) ---
 Yeah. Cuts an 18 minute walk to about 6. The thing nobody mentions is storage — covered bike parking exists at three buildings and is full by 9am at all three. --- reply 2 (9 votes) ---
 Counterpoint, I sold mine. Between November and March the paths are either icy or salted and salt destroys a drivetrain in one season. --- reply 3 (22 votes) ---
-Both true. I keep a cheap bike for September to November and walk the rest of the year. Total cost was about $120 for the bike and I don't care what happens to it. --- reply 4 (5 votes) ---
-If you do get one, the campus does free registration and it's the only reason I got mine back after it was taken.
+Both true. I keep a cheap bike for September to November and walk the rest of the year. Total cost was about $120 for the bike and I don't care what happens to it.
 ```
 
 **Chunk 2** — source: thread_first_gen.txt#0 `` — produced by: chunker.py::split_documents``
@@ -69,7 +76,7 @@ If you do get one, the campus does free registration and it's the only reason I 
 ```
 THREAD: Anything specific for first-generation students? --- reply 1 (33 votes) ---
 The advising office has a specific programme and it is genuinely good, but it is opt-in and badly publicised. Ask for it by name. --- reply 2 (41 votes) ---
-The thing I'd say: the unwritten rules are the hard part, not the coursework. Ask about the unwritten rules explicitly. People are happy to explain them and nobody volunteers them. --- reply 3 (16 votes) ---
+The thing I'd say: the unwritten rules are the hard part, not the coursework. Ask about the unwritten rules explicitly. People are happyto explain them and nobody volunteers them. --- reply 3 (16 votes) ---
 Emergency fund for textbooks and travel exists and is not means-tested beyond a short form.
 ```
 
@@ -77,8 +84,8 @@ Emergency fund for textbooks and travel exists and is not means-tested beyond a 
 
 ```
 THREAD: How much laptop do I actually need for CS courses? --- reply 1 (31 votes) ---
-Less than the recommended spec page says. 16GB of RAM is the one number worth paying for; everything else you'll never notice. --- reply 2 (18 votes) ---
-Adding: the lab machines exist and are better than anything you'll buy. For the heavy assignments people just use those. --- reply 3 (12 votes) ---
+Less than the recommended spec page says. 16GB of RAM is the one number worth paying for; everything else you'll never notice. --- reply2 (18 votes) ---
+Adding: the lab machines exist and are better than anything you'll buy. For the heavy assignments people just use those. --- reply 3 (12votes) ---
 I did two years on an 8GB machine and it was fine until the last project, at which point it very much wasn't. 16 is the answer.
 ```
 
@@ -88,7 +95,6 @@ I did two years on an 8GB machine and it was fine until the last project, at whi
 THREAD: Is it weird to go to office hours with no specific question? --- reply 1 (44 votes) ---
 No, and this is the single most common thing first years get wrong. 'I'm following the lectures but I don't feel like I understand the shape of it' is a completely normal thing to say. --- reply 2 (29 votes) ---
 They're usually empty. You are doing the instructor a favour by turning up. --- reply 3 (18 votes) ---
-If it helps, treat it as a standing appointment. Go every week for a month and it stops feeling like a thing.
 ```
 
 **Chunk 5** — source: thread_professor_email.txt#0  `` — produced by: chunker.py::split_documents``
@@ -111,15 +117,12 @@ Empty office hours is the biggest unused resource here and I say that having was
 **Answer:**
 
 ```
-Based on the provided documents, students suggest the following study spots:
-- Ridgeway Café before 10am, because it is empty, quiet, has good coffee, and they do not push you out (thread_study_spots.txt).
-- The open lounges on floors 2 through 5 of the science building, which are unlocked and almost always empty (thread_study_spots.txt).
-- The library third floor, if you need silence (thread_study_spots.txt).
-- The group study rooms in the library, which can be booked by a single person to use alone since nobody checks (thread_study_spots.txt).
+  (best distance 0.491, cutoff 0.5)
 
-Source: thread_study_spots.txt
+Students suggest several study spots other than the library: Ridgeway Café before 10am (empty, quiet, good coffee) and the open lounges on floors 2 through 5 of the science building (unlocked and almost always empty) (thread_study_spots.txt).
 
-Sources retrieved: thread_commuting.txt, thread_first_gen.txt, thread_laptop_specs.txt, thread_pass_fail.txt, thread_study_spots.txt
+Sources retrieved: thread_commuting.txt, thread_first_gen.txt, thread_pass_fail.txt, thread_study_spots.txt
+
 ```
 
 **My relevance cutoff:**
@@ -135,7 +138,7 @@ Sources retrieved: thread_commuting.txt, thread_first_gen.txt, thread_laptop_spe
 
 | Question | In corpus? | Best distance |
 |---|---|---|
-|  |  |  |
+| "what | advice_threads | 0.491 |
 
 ## How I Used AI
 
