@@ -29,7 +29,7 @@
      Milestone 5. -->
 
 ```
-I picked the corpus on advice threads because I liked how the documents for each thread were focused on specific questions. The questions my system answers are related to singular threads and the questions that led to the creation of the thread. The threads were asking by, I assume, new/incoming students wanted to know about campus life, and most questions that were posted were answered by current/past students to help the student with the question understand more about campus life from a personal point of view.
+I picked the corpus on advice threads because I liked how the documents for each thread were focused on specific questions. The questions my system answers are related to singular threads and the questions that led to the creation of the thread. The threads were asking by, I assume, new/incoming students wanted to know about campus life, and most questions that were posted were answered by current/past students to help the student with the question understand more about campus life from a personal point of view. It can answer questions like professor email vs office hours, joining clubs, best study spots, commuting by bike, pass or fail, winter clothing, clubs, etc.
 ```
 
 ## Chunking Strategy
@@ -48,7 +48,7 @@ I picked the corpus on advice threads because I liked how the documents for each
      Milestone 3. -->
 
 ```
-I picked 600 characters because for the corpus I picked, a lot of the threads provided fully good answers for the questions that were asked in the thread. I also chose an overlap of 100 because it doesn't do much, as a lot of the documents questions don't overlap with one another.
+I picked 600 characters because for the corpus I picked, a lot of the threads provided fully good answers for the questions that were asked in the thread. I also chose an overlap of 100 because it doesn't do much, as a lot of the documents questions don't overlap with one another. I had started out with the original 800 chunk size and 120 overlap but felt like it was a bit too long for the advice_threads corpus.
 ```
 
 ## Sample Chunks
@@ -133,6 +133,8 @@ Sources retrieved: thread_commuting.txt, thread_first_gen.txt, thread_laptop_spe
 
 **My relevance cutoff:**
 
+0.7
+
 <!-- The number you set in config.py, and how you got there.
 
      You ran five questions your corpus covers and the five in OUT_OF_SCOPE
@@ -171,7 +173,7 @@ Each in-corpus question was run 3 times and returned the same best distance ever
 **1.**
 I used AI to help write my chunker.py split_documents dunction. I gave it instructions on what to implement based on my thoughts about splitting on sentences so that nothing is an incomplete thought. And also instructed it to follow the instructions in the document to create a proper function following the model of the fallback.
 **2.**
-I used Claude to help me test my criteron in criteria.md because I wanted to make sure they were testable. I also used Claude to help me decide what was the best threshold for the chunking based on the two groups of 5 sentence/questions each.
+I used Claude to help me decide what was the best threshold for the chunking based on the two groups of 5 sentence/questions each. I had started out with 0.5, then lowered it down to 0.4. But after analyzing the distances for the two groups, Claude suggested that a midpoint between them, 0.7, would be better and more appropriate. I took that into consideration and ended up keeping it as 0.7 because it balanced well with my chunk size and overlap numbers.
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
