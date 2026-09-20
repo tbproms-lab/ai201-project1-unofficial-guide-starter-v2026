@@ -106,10 +106,20 @@ Empty office hours is the biggest unused resource here and I say that having was
      visible. Milestone 4. -->
 
 **Question:**
+"What do students say about the best study spots on campus?"
 
 **Answer:**
 
 ```
+Based on the provided documents, students suggest the following study spots:
+- Ridgeway Café before 10am, because it is empty, quiet, has good coffee, and they do not push you out (thread_study_spots.txt).
+- The open lounges on floors 2 through 5 of the science building, which are unlocked and almost always empty (thread_study_spots.txt).
+- The library third floor, if you need silence (thread_study_spots.txt).
+- The group study rooms in the library, which can be booked by a single person to use alone since nobody checks (thread_study_spots.txt).
+
+Source: thread_study_spots.txt
+
+Sources retrieved: thread_commuting.txt, thread_first_gen.txt, thread_laptop_specs.txt, thread_pass_fail.txt, thread_study_spots.txt
 ```
 
 **My relevance cutoff:**
