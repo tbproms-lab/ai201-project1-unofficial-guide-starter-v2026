@@ -204,7 +204,7 @@ I used Claude to help me decide what was the best threshold for the chunking bas
 |---|---|---|---|---|---|
 | 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
 | 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 |  |
 | 4. Contain full sentences | 4 of 5 | | | | |
 | 5. No more than 800 characters| 3 of 5 | | | |
 
