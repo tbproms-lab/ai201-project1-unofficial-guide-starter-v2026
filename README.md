@@ -205,7 +205,7 @@ Week 2: I used AI to help me count the number of characters across all my run lo
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
 | 1. Retrieved chunk contains the answer | 4 of 5 | 5/5 | 3/5 | 3/5 | MISSED |
-| 2. Every answer names a source | 5 of 5 | 5/5 | 5/5 | 5/5 | 5/5 |
+| 2. Every answer names a source | 5 of 5 | 5/5 | 5/5 | 5/5 | MET |
 | 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
 | 4. Contain full sentences | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
 | 5. No more than 800 characters| 3 of 5 | 5/5 | 5/5 | 5/5 | MET |
@@ -308,7 +308,7 @@ I changed the relevance number because with a corpus this small and a top-k 5, t
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
 | 1. Retrieved chunk contains the answer | 4 of 5 | 5/5 | 5/5 | 4/5 | MET |
-| 2. Every answer names a source | 5 of 5 | 5/5 | 5/5 | 5/5 | 5/5 |
+| 2. Every answer names a source | 5 of 5 | 5/5 | 5/5 | 5/5 | MET |
 | 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
 | 4. Contain full sentences | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
 | 5. No more than 800 characters| 3 of 5 | 5/5 | 5/5 | 5/5 | MET |
