@@ -202,15 +202,47 @@ I used Claude to help me decide what was the best threshold for the chunking bas
 
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 |  |
-| 4. Contain full sentences | 4 of 5 | | | | |
-| 5. No more than 800 characters| 3 of 5 | | | |
+| 1. Retrieved chunk contains the answer | 4 of 5 | 5/5 | 3/5 | 3/5 | MISSED |
+| 2. Every answer names a source | 5 of 5 | 5/5 | 5/5 | 5/5 | 5/5 |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 4. Contain full sentences | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 5. No more than 800 characters| 3 of 5 | 5/5 | 5/5 | 5/5 | MET |
 
 <!-- Underneath, paste the REAL output for each criterion from one of your
      runs — the actual text your system produced, not a description of it.
      Name the file and function that produced it. -->
+
+
+### 1. Retrieved chunk contains the answer
+Produced by `store.py::search` (retrieval) and `chunker.py::split_documents` (chunking).
+
+"What should students pack for winter clothing?" — run 1:
+ According to thread_winter_advice.txt, students should wear layers instead of a big
+ coat because buildings are overheated, and they need boots with actual tread since
+ the path past the pond ices over.
+
+### 2. Every answer names a source
+Produced by `generate.py::answer_from_chunks`.
+
+Same answer above cites `thread_winter_advice.txt` inline.
+
+### 3. Gate stops out-of-corpus questions
+Produced by `gate.py::check` (threshold comparison in `run_eval.py::check_out_of_scope`).
+
+"What is the capital of Mongolia?" → best distance 0.948 → refused (threshold 0.7)
+
+### 4. Contains full sentences
+Produced by `generate.py::answer_from_chunks`.
+
+"Students say that for most people the $30 quota is enough, as it amounts to about
+600 black and white pages, but colour printing eats up the quota quickly because it
+costs eight times as much per page (thread_printing.txt)." — ends on a complete sentence.
+
+### 5. No more than 800 characters
+Produced by `generate.py::answer_from_chunks`.
+
+Same answer above is 218 characters.
+
 
 ## Verdicts
 
@@ -225,11 +257,11 @@ I used Claude to help me decide what was the best threshold for the chunking bas
 
 | # | Criterion | Verdict | How I decided |
 |---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
+| 1 | Retrieved chunk contains the answer | MISSED | I decided that this criterion was missed because the scorer.py did not see the get the expected word/phrase for a couple of questions. |
+| 2 | Every answer names a source | MET | This criterion was met because every single answer referenced the source in the text. |
+| 3 | Gate stops out-of-corpus questions |MET | The gate is measured in a single deterministic pass, so all three runs met this criteria. |
+| 4 | Contains full sentences | MET | This criterion was met because no answer started/ended abruptly, every thing contained full sentences. |
+| 5 | No more than 800 characters | MET | I decied this criterion was met because the longest output was about 529 characters long. |
 
 ## Diagnoses
 
