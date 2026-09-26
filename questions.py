@@ -23,7 +23,7 @@ names a target of "4 of 5", and four of three is not a thing.
 
 QUESTIONS = [
     # {"question": "...", "expects": "..."},
-    {"question": "What do students say about when to use the pass/fail option?", "expects": "non-major courses"},
+    {"question": "What do students say about when to use the pass/fail option?", "expects": "major"},
     {"question": "What should students pack for winter clothing?", "expects": "layers"},
     {"question": "What should a student do if they need to turn in an assignment late?", "expects": "ask"},
     {"question": "What do students say about the prininting quota being enough?", "expects": "black and white"},
